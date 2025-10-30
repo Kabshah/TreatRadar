@@ -1,0 +1,9 @@
+poetry config virtualenvs.in-project true
+ poetry init
+ poetry config virtualenvs.in-project true
+  poetry shell
+poetry add flask_sqlalchemy instagrapi apscheduler werkzeug
+
+poetry env activate
+ & "E:\Birthday Wisher\.venv\Scripts\activate.ps1"
+ python app.py

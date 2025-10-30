@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard Page - Kabshah{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Header Section - Centered -->
+    <div class="text-center mb-4 position-relative">
+        <a href="/logout" class="btn btn-outline-danger position-absolute" style="right: 0; top: 0;">Logout</a>
+        <h2 class="mb-2">🎉 Treat Radar</h2>
+        <p class="text-muted mb-0">Welcome back, <strong>{{ user.username }}</strong></p>
+    </div>
+
+    <!-- Add Birthday Card -->
+    <div class="card dashboard-card p-4 mb-4 mt-5">
+        <div class="d-flex align-items-center mb-3">
+            <span style="font-size: 24px; margin-right: 10px;">🎂</span>
+            <h4 class="mb-0">Add a Birthday</h4>
+        </div>
+        <form method="post" action="/add-birthday">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter full name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="@username" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Birthday</label>
+                <input type="text" class="form-control" name="birthday" placeholder="YYYY-MM-DD" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Add Birthday</button>
+        </form>
+    </div>
+
+    <!-- Saved Birthdays Card -->
+    <div class="card dashboard-card p-4">
+        <div class="d-flex align-items-center mb-3">
+            <span style="font-size: 24px; margin-right: 10px;">📅</span>
+            <h4 class="mb-0">Saved Birthdays</h4>
+        </div>
+        {% if birthdays %}
+        <ul class="list-group">
+            {% for b in birthdays %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <div style="font-weight: 600; color: #1f2937;">{{ b.name }} ({{ b.username }})</div>
+                    <div style="font-size: 14px; color: #6b7280;">{{ b.birthday }}</div>
+                </div>
+                <span class="badge bg-{{ 'success' if b.wished else 'secondary' }}">
+                    {{ 'Wished' if b.wished else 'Pending' }}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <div class="text-center py-4">
+            <p class="text-muted mb-0">No birthdays saved yet. Add your first one above! 🎈</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

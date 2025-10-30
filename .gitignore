@@ -1,0 +1,10 @@
+session.json
+.env
+session.json
+*.db
+__pycache__/
+*.pyc
+*.db
+*.sqlite3
+.vscode/
+.venv/

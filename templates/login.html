@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Login Page - Kabshah{% endblock %}
+{% block content %}
+<div class="container login-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-12 col-sm-10 col-md-6 col-lg-5">
+            <div class="card login-card p-5">
+                <div class="text-center mb-4">
+                    <h1 class="mb-2" style="font-size: 2.5rem;">🎂</h1>
+                    <h2 class="mb-2">Login Page</h2>
+                    <p class="text-muted">Sign in to your Birthday Tracker</p>
+                </div>
+                
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Instagram Username</label>
+                        <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your username">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Enter your password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+                
+                <div class="text-center mt-4">
+                    <p class="text-muted mb-0" style="font-size: 14px;">Never forget a birthday again! 🎉</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
