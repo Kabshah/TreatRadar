@@ -27,3 +27,6 @@ It uses the **Instagrapi** library for Instagram automation and **APScheduler** 
 ![alt text](image.png)
 
 ![alt text](image-1.png)
+
+# Project Demo
+https://github.com/user-attachments/assets/be3314bc-822b-4ddb-a2f8-b008ef2a1dcb
