@@ -79,7 +79,7 @@ def auto_send_wishes():
 
 # -------------------- SCHEDULER -------------------- #
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=auto_send_wishes, trigger="cron", hour=19, minute=1)
+scheduler.add_job(func=auto_send_wishes, trigger="cron", hour=0, minute=0)
 scheduler.start()
 
 
